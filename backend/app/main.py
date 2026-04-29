@@ -6,7 +6,7 @@ from app.api.auth_routes import router as auth_router
 
 
 #Create tables in DB
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Smart Recipes API")
 
