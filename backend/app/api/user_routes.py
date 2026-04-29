@@ -1,14 +1,16 @@
 from fastapi import APIRouter, HTTPException
-from app.schemas.user import UserCreate, UserResponse
+from app.schemas.user import UserCreate, UserResponse,UserLogin
 from app.services import user_service
+from app.core.security import create_access_token
 
 router = APIRouter()
 
 
 # CREATE USER
-@router.post("/", response_model=UserResponse)
+@router.post("/register", response_model=UserResponse)
 def create_user(user: UserCreate):
     return user_service.create_user(user)
+
 
 
 # GET ALL USERS
